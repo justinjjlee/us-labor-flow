@@ -58,12 +58,13 @@ Part-time employment count in non-agricultural sector, for,
 
 | Data | Source | Data Pull Method | Aggregation |
 | :---: | :---: | :---: | :---: |
-| Economic reason | [julia - FRED API](https://github.com/micahjsmith/FredData.jl) | (level: LNS12032197) |
-| Non-Economic reasons | [julia - FRED API](https://github.com/micahjsmith/FredData.jl) | (level: LNS12033182) |
+| Economic reason | BLS/FRED | [julia - FRED API](https://github.com/micahjsmith/FredData.jl) | (level: LNS12032197) |
+| Non-Economic reasons | BLS/FRED | [julia - FRED API](https://github.com/micahjsmith/FredData.jl) | (level: LNS12033182) |
 
 ### (d) Hours worked for part-time workers
 For non-agricultural part-time workers,
-
+| Data | Source | Data Pull Method | Aggregation |
+| :---: | :---: | :---: | :---: |
 | Average hours worked  | BLS | [julia - BLS API](https://www.bls.gov/developers/api_sample_code.htm) | (level: LNU02033235) |
 
 ### (e) Job finding statistics
