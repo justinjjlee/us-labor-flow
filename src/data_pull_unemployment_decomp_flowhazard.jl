@@ -60,15 +60,15 @@ for j ∈ 1:T
     LeadIU0 = IUlead[j];
 
     Lt0     = L[j]; 
-    Qt0 = Q[j]; 
-    IUt0 = IU[j];
+    Qt0     = Q[j]; 
+    IUt0    = IU[j];
 
     LFt0    = LF[j]; 
-    It0 = NILF[j];   
+    It0     = NILF[j];   
 
     F_L0    = FLwk[j]; 
-    F_Q0 = FQwk[j]; 
-    F_IU0 = FIUwk[j];
+    F_Q0    = FQwk[j]; 
+    F_IU0   = FIUwk[j];
 
     in_L0   = stLlead[j]/Emp[j];
     in_Q0   = stQlead[j]/Emp[j];

@@ -1,4 +1,3 @@
-
 #Employment level ---------------------------------------------------------------------------------------------
 #Employment Level: Nonagricultural Industries
 #Employment Level: Nonagriculture, Self-employed Workers, Unincorporated
