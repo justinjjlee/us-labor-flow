@@ -13,7 +13,7 @@ The metrics calculated in the code use snippets translated from the MATLAB codes
 | Claims of unemployment insurance | Initial claims of unemployment insurance aggregated in national level | BLS/FRED | - | - |
 | Employment: Part-time by reason | Part-timer employment statistics by reason (economic conditions) | BLS/FRED | - |
 | Hours worked | Average hours worked for non-agricultural sector | BLS/FRED | - |
-| Job finding statistics | Job finding and separation rate | CPS/JOLTS/FRED | [Elsby et al. (2009)](https://doi.org/10.1257/mac.1.1.84) |
+| Job finding statistics | Job finding and separation rate | [CPS](https://www.bls.gov/webapps/legacy/cpsflowstab.htm)/[JOLTS](https://www.bls.gov/jlt/)/FRED | [Elsby et al. (2009)](https://doi.org/10.1257/mac.1.1.84) |
 | Flow hazard rate | Flow of labor between different states | BLS/[Elsby et al. (2009)](https://doi.org/10.1257/mac.1.1.84) | [Elsby et al. (2009)](https://doi.org/10.1257/mac.1.1.84) |
 | Transition probability | Probability of changing employment state/status | BLS/Borowczyk-Martins and Lalé ([2019](https://doi.org/10.1257/mac.20160078), [2020](https://doi.org/10.1016/j.labeco.2020.101940)) | Borowczyk-Martins and Lalé ([2019](https://doi.org/10.1257/mac.20160078), [2020](https://doi.org/10.1016/j.labeco.2020.101940)) |
 
