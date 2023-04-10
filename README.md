@@ -10,7 +10,7 @@ The metrics calculated in the code use snippets translated from the MATLAB codes
 | Data | Description | Data Source | Relevant Literature |
 | --- | :---: | :---: | :---: |
 | Unemployment by duration and by reason | Unemployment by duration (weeks) by reasons | BLS |  - |
-| Claims of unemployment insurance | Initial claims of unemployment insurance aggregated in national level | BLS/FRED | - | - |
+| Claims of unemployment insurance | Initial and continuous claims of unemployment insurance | BLS/FRED | - | - |
 | Employment: Part-time by reason | Part-timer employment statistics by reason (economic conditions) | BLS/FRED | - |
 | Hours worked | Average hours worked for non-agricultural sector | BLS/FRED | - |
 | Job finding statistics | Job finding and separation rate | [CPS](https://www.bls.gov/webapps/legacy/cpsflowstab.htm)/[JOLTS](https://www.bls.gov/jlt/)/FRED | [Elsby et al. (2009)](https://doi.org/10.1257/mac.1.1.84) |
