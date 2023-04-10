@@ -1,7 +1,7 @@
 # Starter package relevant to run the code
 
 using Pkg
-using FredData, BlsData
+using HTTP, FredData, BlsData
 using JSON
 using CSV, DataFrames, XLSX
 using Dates
@@ -15,10 +15,6 @@ eye(n) = Matrix{Float64}(I, n, n)
 ################################### 
 ## API set up
 ################################### 
-
-# Register API call wrapper
-api_fred = Fred(api_key_fred);
-api_bls  = Bls(api_key_bls);
 
 # Specific date for mapping
 date_start = "1980-01-01"

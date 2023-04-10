@@ -46,8 +46,8 @@ df_unemp_decom = dfjoins(df_unemp_decom, unemp_lvl_loserdf[:, ["date", "value"]]
 df_unemp_decom = dfjoins(df_unemp_decom, unemp_lvl_leaverdf[:, ["date", "value"]], "unemp_lvl_leaver")
 df_unemp_decom = dfjoins(df_unemp_decom, unemp_lvl_retrantdf[:, ["date", "value"]], "unemp_lvl_retrant")
 df_unemp_decom = dfjoins(df_unemp_decom, unemp_lvl_newentrantdf[:, ["date", "value"]], "unemp_lvl_newentrant")
-df_unemp_decom["unemp_lvl_entrant"] = df_unemp_decom["unemp_lvl_retrant"] + 
-                                        df_unemp_decom["unemp_lvl_newentrant"]
+df_unemp_decom["unemp_lvl_entrant"] = df_unemp_decom[:,"unemp_lvl_retrant"] + 
+                                        df_unemp_decom[:,"unemp_lvl_newentrant"]
 
 # Broken down by type .........................................................................................
 
@@ -55,67 +55,67 @@ df_unemp_decom["unemp_lvl_entrant"] = df_unemp_decom["unemp_lvl_retrant"] +
 str_use = "LNU03023633"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_loser_5 = dfblsping.data
-df_unemp_decom["loser_wk5"] = unemp_lvl_loserdf.value .* unemp_loser_5.value / 100
+df_unemp_decom[:,"loser_wk5"] = unemp_lvl_loserdf.value .* unemp_loser_5.value / 100
 
 str_use = "LNU03023717"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_leaver_5 = dfblsping.data
-df_unemp_decom["leaver_wk5"] = unemp_lvl_leaverdf.value .* unemp_leaver_5.value / 100
+df_unemp_decom[:,"leaver_wk5"] = unemp_lvl_leaverdf.value .* unemp_leaver_5.value / 100
 
 str_use = "LNU03023581"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_retrant_5 = dfblsping.data
-df_unemp_decom["retrant_wk5"] = unemp_lvl_retrantdf.value .* unemp_retrant_5.value / 100
+df_unemp_decom[:,"retrant_wk5"] = unemp_lvl_retrantdf.value .* unemp_retrant_5.value / 100
 
 str_use = "LNU03023585"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_newetrant_5 = dfblsping.data
-df_unemp_decom["newentrant_wk5"] = unemp_lvl_newentrantdf.value .* unemp_newetrant_5.value / 100
+df_unemp_decom[:,"newentrant_wk5"] = unemp_lvl_newentrantdf.value .* unemp_newetrant_5.value / 100
 
-df_unemp_decom["entrant_wk5"] = df_unemp_decom["retrant_wk5"] + df_unemp_decom["newentrant_wk5"]
+df_unemp_decom[:,"entrant_wk5"] = df_unemp_decom[:,"retrant_wk5"] + df_unemp_decom[:,"newentrant_wk5"]
 
 # 5 - 14 weeks
 str_use = "LNU03023645"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_loser_514 = dfblsping.data
-df_unemp_decom["loser_wk514"] = unemp_lvl_loserdf.value .* unemp_loser_514.value / 100
+df_unemp_decom[:,"loser_wk514"] = unemp_lvl_loserdf.value .* unemp_loser_514.value / 100
 
 str_use = "LNU03023729"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_leaver_514 = dfblsping.data
-df_unemp_decom["leaver_wk514"] = unemp_lvl_leaverdf.value .* unemp_leaver_514.value / 100
+df_unemp_decom[:,"leaver_wk514"] = unemp_lvl_leaverdf.value .* unemp_leaver_514.value / 100
 
 str_use = "LNU03023605"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_retrant_514 = dfblsping.data
-df_unemp_decom["retrant_wk514"] = unemp_lvl_retrantdf.value .* unemp_retrant_514.value / 100
+df_unemp_decom[:,"retrant_wk514"] = unemp_lvl_retrantdf.value .* unemp_retrant_514.value / 100
 
 str_use = "LNU03023609"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_newetrant_514 = dfblsping.data
-df_unemp_decom["newentrant_wk514"] = unemp_lvl_newentrantdf.value .* unemp_newetrant_514.value / 100
+df_unemp_decom[:,"newentrant_wk514"] = unemp_lvl_newentrantdf.value .* unemp_newetrant_514.value / 100
 
-df_unemp_decom["entrant_wk514"] = df_unemp_decom["retrant_wk514"] + df_unemp_decom["newentrant_wk514"]
+df_unemp_decom[:,"entrant_wk514"] = df_unemp_decom[:,"retrant_wk514"] + df_unemp_decom[:,"newentrant_wk514"]
 
 # 15 weeks +
 str_use = "LNU03023637"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_loser_15 = dfblsping.data
-df_unemp_decom["loser_wk15"] = unemp_lvl_loserdf.value .* unemp_loser_15.value / 100
+df_unemp_decom[:,"loser_wk15"] = unemp_lvl_loserdf.value .* unemp_loser_15.value / 100
 
 str_use = "LNU03023721"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_leaver_15 = dfblsping.data
-df_unemp_decom["leaver_wk15"] = unemp_lvl_leaverdf.value .* unemp_leaver_15.value / 100
+df_unemp_decom[:,"leaver_wk15"] = unemp_lvl_leaverdf.value .* unemp_leaver_15.value / 100
 
 str_use = "LNU03023589"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_retrant_15 = dfblsping.data
-df_unemp_decom["retrant_wk15"] = unemp_lvl_retrantdf.value .* unemp_retrant_15.value / 100
+df_unemp_decom[:,"retrant_wk15"] = unemp_lvl_retrantdf.value .* unemp_retrant_15.value / 100
 
 str_use = "LNU03023593"
 dfblsping = BlsData.get_data(api_bls, str_use; startyear = year_start, endyear = year_end, catalog = false)
 unemp_newetrant_15 = dfblsping.data
-df_unemp_decom["newentrant_wk15"] = unemp_lvl_newentrantdf.value .* unemp_newetrant_15.value / 100
+df_unemp_decom[:,"newentrant_wk15"] = unemp_lvl_newentrantdf.value .* unemp_newetrant_15.value / 100
 
-df_unemp_decom["entrant_wk15"] = df_unemp_decom["retrant_wk15"] + df_unemp_decom["newentrant_wk15"]
+df_unemp_decom[:,"entrant_wk15"] = df_unemp_decom[:,"retrant_wk15"] + df_unemp_decom[:,"newentrant_wk15"]

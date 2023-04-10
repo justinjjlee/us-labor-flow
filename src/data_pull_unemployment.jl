@@ -10,9 +10,9 @@ unemp_cc = FredData.get_data(api_fred, "CCSA"; observation_start = date_start, f
 unemp_ic = FredData.get_data(api_fred, "ICSA"; observation_start = date_start, frequency = "m", 
     aggregation_method = "avg")
 unemp_cc_lab = deepcopy(unemp_cc.data)
-unemp_cc_lab["value"] = unemp_cc.data.value ./ labforce.data.value /10
+unemp_cc_lab[:,"value"] = unemp_cc.data.value ./ labforce.data.value /10
 unemp_cc_lab_unemp = deepcopy(unemp_cc_lab)
-unemp_cc_lab_unemp["value"] = unemp_cc_lab.value ./ unemp.data.value * 100
+unemp_cc_lab_unemp[:,"value"] = unemp_cc_lab.value ./ unemp.data.value * 100
 # Average duration of unemployment
 duration_unemp = FredData.get_data(api_fred, "UEMPMEAN"; observation_start = date_start)
 

@@ -14,6 +14,10 @@ api_key_bls = apikeys["api_key_bls"]
 api_key_fred = "-------------------------- USE YOUR FRED API KEY HERE --------------------------"
 api_key_bls = "-------------------------- USE YOUR FRED API KEY HERE --------------------------"
 
+# Register API call wrapper
+api_fred = Fred(api_key_fred);
+api_bls  = Bls(api_key_bls);
+
 # Dataframe generation for labor force and population statistics
 include("data_pull_LaborForce.jl")
 # OUTPUT: df_labforce

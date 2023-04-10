@@ -21,4 +21,4 @@ df_labforce = dfjoins(df_labforce, labforce_not.data[:, ["date", "value"]], "lab
 df_labforce = dfjoins(df_labforce, pop.data[:, ["date", "value"]], "pop")
 
 # make population unit in thousands
-df_labforce["pop"] = df_labforce["pop"] ./ 1000
+df_labforce[:,"pop"] = df_labforce["pop"] ./ 1000

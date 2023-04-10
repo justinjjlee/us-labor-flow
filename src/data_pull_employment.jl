@@ -16,7 +16,7 @@ emp_pt_econ_only = FredData.get_data(api_fred, "LNS12032199"; observation_start 
 emp_pt_econ_not = FredData.get_data(api_fred, "LNS12032200"; observation_start = date_start)
 emp_ratiopop = FredData.get_data(api_fred, "EMRATIO"; observation_start = date_start)
 emp_ratiolabforce = deepcopy(emp.data)
-emp_ratiolabforce["value"] = emp.data.value ./ labforce.data.value
+emp_ratiolabforce[:,"value"] = emp.data.value ./ labforce.data.value
 # Housrs worked part time
 # Average Hours, Persons At Work 1-34 Hours, Economic Reasons, Nonagricultural Industries
 str_use = "LNU02033235"
@@ -70,10 +70,10 @@ fredmd = CSV.read(download("https://files.stlouisfed.org/files/htdocs/fred-md/mo
 # Remove rows missing
 fredmd = fredmd[2:end-1,:]
 # Convert date
-fredmd["date"] = Date.(fredmd.sasdate, dateformat"m/d/y")
+fredmd[:,"date"] = Date.(fredmd.sasdate, dateformat"m/d/y")
 # Add real-time, which is just data pull, this is not the real-time vintage date per se
-fredmd["realtime_start"] = jolts_vacant.data.realtime_start[1]
-fredmd["realtime_end"] = jolts_vacant.data.realtime_end[1]
+fredmd[:,"realtime_start"] = jolts_vacant.data.realtime_start[1]
+fredmd[:,"realtime_end"] = jolts_vacant.data.realtime_end[1]
 
 # Help wanted unemployment ratio
 vacance_ratiounemp = fredmd[:, [:realtime_start, :realtime_end, :date, :HWIURATIO]]

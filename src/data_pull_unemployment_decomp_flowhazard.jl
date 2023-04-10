@@ -105,7 +105,7 @@ inIUhazmo = -log.(1 .- inIUmo);
 # Combine calculated hazard rate
 hazreasmo=[inLhazmo inQhazmo inIUhazmo];
 df_hazard = DataFrame(hazreasmo, [:leaver_hazardinflow, :loser_hazardinflow, :entrant_hazardinflow])
-df_hazard["date"] = df_unemp_decom.date[2:T+1]
+df_hazard[:,"date"] = df_unemp_decom.date[2:T+1]
 
 # Add to the decomposition function
 df_unemp_decom = leftjoin(df_unemp_decom, df_hazard, on=:date)

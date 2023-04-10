@@ -1,15 +1,15 @@
 # Job finding/separation rate ---------------------------------------------------------------------------------
 #   input data
-us_t     = df_unemp_decom["unemp_lvl_5"];   # unemployment level, short
-us_t1    = us_t[2:end];                     # unemployment level, short, next period
-us_t     = us_t[1:(end - 1)];               # (update) unemployment level, short
+us_t     = df_unemp_decom[:,"unemp_lvl_5"];   # unemployment level, short
+us_t1    = us_t[2:end];                       # unemployment level, short, next period
+us_t     = us_t[1:(end - 1)];                 # (update) unemployment level, short
 
-u_t      = df_unemp_decom["unemp_lvl"];     # unemployment level
-u_t1     = u_t[2:end];                      # unemployment level, next period
-u_t      = u_t[1:(end - 1)];                # (update) unemployment level
+u_t      = df_unemp_decom[:,"unemp_lvl"];     # unemployment level
+u_t1     = u_t[2:end];                        # unemployment level, next period
+u_t      = u_t[1:(end - 1)];                  # (update) unemployment level
 
-l_t      = df_labforce["laborforce_total"]; # civilian labor force level
-l_t      = l_t[1:(end - 1)];                # (update) civilian labor force level
+l_t      = df_labforce[:,"laborforce_total"]; # civilian labor force level
+l_t      = l_t[1:(end - 1)];                  # (update) civilian labor force level
 
 T        = length(l_t);
 
@@ -50,6 +50,6 @@ for t_time = 1:T
 end
 
 df_jsfrate = DataFrame(hcat(f_t, s_t), [:laborforce_jobfindrate, :laborforce_jobseparaterate])
-df_jsfrate["date"] = df_labforce[2:T+1, "date"]
+df_jsfrate[:,"date"] = df_labforce[2:T+1, "date"]
 
 df_labforce = leftjoin(df_labforce, df_jsfrate, on = :date)
